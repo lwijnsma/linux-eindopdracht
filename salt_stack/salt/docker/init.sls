@@ -32,3 +32,20 @@ docker-ce-cli:
     - require:  
       - pkgrepo: docker-repo
 
+enable_metricbeat_docker:
+  cmd.run: 
+    - name: metricbeat modules enable docker
+
+docker_monitoring:
+  file.managed:
+    - name: /etc/metricbeat/modules.d/docker.yml
+    - source: salt://metricbeat/files/modules.d/docker.yml
+    
+setup_docker_monitoring:
+  cmd.run: 
+    - name: metricbeat setup
+
+whoami:
+  cmd.run:
+    - name: >- 
+        docker run -d -p 5080:80 containous/whoami
