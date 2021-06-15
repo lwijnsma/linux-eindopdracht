@@ -30,4 +30,3 @@ metricbeat_service:
     - reload: true
     - watch:
       - file: /etc/metricbeat/metricbeat.yml
-      - file: /etc/metricbeat/modules.d/*

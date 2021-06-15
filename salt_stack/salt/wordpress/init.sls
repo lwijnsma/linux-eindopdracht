@@ -64,6 +64,8 @@ reload-nginx:
 enable_nginx_monitoring:
   cmd.run: 
     - name: metricbeat modules enable nginx
+    - creates: 
+      - /etc/metricbeat/modules.d/nginx.yml
 
 /etc/metricbeat/modules.d/nginx.yml:
   file.managed:
@@ -73,6 +75,9 @@ enable_nginx_monitoring:
 enable_nginx_loging:
   cmd.run:
     - name: filebeat modules enable nginx mysql
+    - creates: 
+      - /etc/filebeat/modules.d/nginx.yml
+      - /etc/filebeat/modules.d/mysql.yml
 
 setup_filebeat_nginxlog:
   cmd.run: 

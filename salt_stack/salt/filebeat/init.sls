@@ -24,7 +24,6 @@ filebeat_service:
     - reload: true
     - watch:
       - file: /etc/filebeat/filebeat.yml
-      - file: /etc/filebeat/modules.d/*
 
 
     
