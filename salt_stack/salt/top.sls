@@ -1,10 +1,13 @@
 base:
   '*':
     - base
-  'salt-master':
-    - elasticstack  
-  'minion*':
     - metricbeat
     - filebeat
-    - docker
     - elasticrepo
+  'salt-master':
+    - elasticstack
+    - master
+  'minion1':
+    - docker
+  'minion2':
+    - wordpress
