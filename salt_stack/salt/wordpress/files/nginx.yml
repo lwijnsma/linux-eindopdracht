@@ -1,0 +1,11 @@
+metricbeat.modules:
+- module: nginx
+  metricsets: ["stubstatus"]
+  enabled: true
+  period: 10s
+
+  # Nginx hosts
+  hosts: ["http://{{pillar['hosts']['minion2']['ip']}}"]
+
+  # Path to server status. Default nginx_status
+  server_status_path: "nginx_status"

@@ -21,7 +21,10 @@ filebeat_service:
   service.running:
     - name: filebeat
     - enable: true
+    - reload: true
     - watch:
-      - pkg: filebeat
+      - file: /etc/filebeat/filebeat.yml
+      - file: /etc/filebeat/modules.d/*
+
 
     

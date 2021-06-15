@@ -48,4 +48,4 @@ setup_docker_monitoring:
 whoami:
   cmd.run:
     - name: >- 
-        docker run -d -p 5080:80 containous/whoami
+        docker run -d -p 80:80 containous/whoami

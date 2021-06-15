@@ -65,6 +65,19 @@ enable_nginx_monitoring:
   cmd.run: 
     - name: metricbeat modules enable nginx
 
+/etc/metricbeat/modules.d/nginx.yml:
+  file.managed:
+    - template: jinja
+    - source: salt://wordpress/files/nginx.yml
+
 enable_nginx_loging:
   cmd.run:
     - name: filebeat modules enable nginx mysql
+
+setup_filebeat_nginxlog:
+  cmd.run: 
+    - name: filebeat setup
+
+setup_metricbeat_nginxlog:
+  cmd.run: 
+    - name: metricbeat setup
