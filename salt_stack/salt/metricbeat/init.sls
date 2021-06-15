@@ -27,6 +27,5 @@ metricbeat_service:
   service.running:
     - name: metricbeat
     - enable: true
-    - reload: true
     - watch:
       - file: /etc/metricbeat/metricbeat.yml

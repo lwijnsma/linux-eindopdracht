@@ -21,7 +21,6 @@ filebeat_service:
   service.running:
     - name: filebeat
     - enable: true
-    - reload: true
     - watch:
       - file: /etc/filebeat/filebeat.yml
 
