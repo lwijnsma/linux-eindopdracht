@@ -1,3 +1,6 @@
+# Saltstack eindopdracht Blok 2.4
+
+Een saltstack die automatisch een Saltmaster een docker host en een Wordpress website opzet.
 
 ## Deployment
 
